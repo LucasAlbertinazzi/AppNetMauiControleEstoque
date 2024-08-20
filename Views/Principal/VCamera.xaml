@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppNetMaui.Views.Principal.VCamera"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+    Title="VCamera"
+    Loaded="ContentPage_Loaded">
+    <Grid Grid.Row="0" RowDefinitions="*">
+        <cv:CameraView x:Name="cameraView" CamerasLoaded="cameraView_CamerasLoaded" />
+        <Frame Margin="0,0,0,25" Style="{StaticResource frameFoto}" />
+        <Grid
+            Grid.Row="0"
+            Margin="25"
+            HeightRequest="120"
+            HorizontalOptions="StartAndExpand"
+            VerticalOptions="EndAndExpand">
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                HorizontalOptions="Center"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center"
+                ZIndex="3"
+                Color="White" />
+            <Grid
+                x:Name="stackGaleria"
+                IsVisible="False"
+                RowDefinitions="*"
+                ZIndex="1">
+                <Image
+                    x:Name="imgGaleria"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" />
+                <Button
+                    x:Name="btnGaleria"
+                    BackgroundColor="Transparent"
+                    Clicked="btnGaleria_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    ZIndex="1" />
+            </Grid>
+
+        </Grid>
+        <Button
+            x:Name="btnFoto"
+            Margin="0,0,0,29.7"
+            Clicked="btnFoto_Clicked"
+            Style="{StaticResource btnFoto}"
+            VerticalOptions="EndAndExpand" />
+    </Grid>
+</ContentPage>

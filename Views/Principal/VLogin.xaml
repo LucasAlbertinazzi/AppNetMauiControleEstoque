@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppNetMaui.Views.VLogin"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VLogin"
+    Loaded="ContentPage_Loaded">
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="Fill"
+            Source="fundo.svg"
+            VerticalOptions="Fill" />
+        <Grid Margin="25">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3.2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="2.5*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+
+            <Image
+                x:Name="logoSize"
+                HorizontalOptions="CenterAndExpand"
+                Source="logo.svg"
+                VerticalOptions="CenterAndExpand" />
+
+            <Frame Grid.Row="1" Style="{StaticResource frameLogin}">
+                <Entry
+                    x:Name="UsernameEntry"
+                    Placeholder="Usuário"
+                    Style="{StaticResource entryLogin}" />
+            </Frame>
+
+            <Frame Grid.Row="2" Style="{StaticResource frameLogin}">
+                <StackLayout Orientation="Horizontal">
+                    <Entry
+                        x:Name="PasswordEntry"
+                        IsPassword="True"
+                        Placeholder="Senha"
+                        Style="{StaticResource entryLogin}" />
+                    <ImageButton
+                        x:Name="ShowPasswordButton"
+                        Margin="0,0,10,0"
+                        Clicked="OnShowPasswordButtonClicked"
+                        HeightRequest="26"
+                        WidthRequest="26" />
+                </StackLayout>
+            </Frame>
+
+            <StackLayout
+                Grid.Row="3"
+                FlowDirection="RightToLeft"
+                Orientation="Horizontal"
+                Spacing="5">
+                <Switch x:Name="CredentialsSwitch" />
+                <Label
+                    HorizontalOptions="Center"
+                    Style="{StaticResource labelPadraoWhite}"
+                    Text="Lembrar-me"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                Grid.Row="4"
+                HorizontalOptions="Center"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center"
+                Color="White" />
+
+            <Button
+                x:Name="btnEntrar"
+                Grid.Row="4"
+                Clicked="OnLoginClicked"
+                HorizontalOptions="FillAndExpand"
+                MinimumHeightRequest="50"
+                Style="{StaticResource btnMenuPadrao}"
+                Text="Entrar" />
+
+            <Label
+                x:Name="lblInfoDev"
+                Grid.Row="5"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Style="{StaticResource labelPadraoWhite}"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="lblInfoDevVersao"
+                Grid.Row="6"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Style="{StaticResource labelPadraoWhite}"
+                VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentPage>

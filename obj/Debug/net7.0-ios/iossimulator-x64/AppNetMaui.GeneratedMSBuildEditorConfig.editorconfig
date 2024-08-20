@@ -1,0 +1,89 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppNetMaui
+build_property.ProjectDir = D:\Projetos\AppNetMauiControleEstoque\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[D:/Projetos/AppNetMauiControleEstoque/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Auditoria/VContagemAberta.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Auditoria.VContagemAberta.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auditoria\VContagemAberta.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auditoria\VContagemAberta.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Auditoria/VContagemFechada.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Auditoria.VContagemFechada.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auditoria\VContagemFechada.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auditoria\VContagemFechada.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Auditoria/VContagens.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Auditoria.VContagens.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auditoria\VContagens.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auditoria\VContagens.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Auditoria/VNewContagem.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Auditoria.VNewContagem.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Auditoria\VNewContagem.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Auditoria\VNewContagem.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Principal/VCamera.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Principal.VCamera.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Principal\VCamera.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Principal\VCamera.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Principal/VLogin.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Principal.VLogin.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Principal\VLogin.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Principal\VLogin.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Principal/VMenuPrincipal.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Principal.VMenuPrincipal.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Principal\VMenuPrincipal.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Principal\VMenuPrincipal.xaml
+
+[D:/Projetos/AppNetMauiControleEstoque/Views/Principal/VVisualizadorImagem.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppNetMaui.Views.Principal.VVisualizadorImagem.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Principal\VVisualizadorImagem.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Principal\VVisualizadorImagem.xaml

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    x:Class="AppNetMaui.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppNetMaui">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--#region 1- Background-->
+
+            <!--#endregion-->
+
+            <!--#region 2- TextBox-->
+
+            <Style x:Key="TextBoxLogin" TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource Gray900}" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="MaxLength" Value="10" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Nona}" />
+            </Style>
+
+            <!--#endregion-->
+
+            <!--#region 3- Button-->
+
+            <Style x:Key="btnPadraoMenu" TargetType="Button">
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="{StaticResource White}" />
+                <Setter Property="Background" Value="{StaticResource Nona}" />
+            </Style>
+
+
+            <!--#endregion-->
+
+            <!--#region 4- Picker-->
+
+            <Style x:Key="PickerPadrao" TargetType="Picker">
+                <Setter Property="MinimumHeightRequest" Value="52" />
+                <Setter Property="TitleColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontAutoScalingEnabled" Value="True" />
+            </Style>
+
+            <!--#endregion-->
+
+            <!--#region 5- Buttons-->
+            <Style x:Key="btnMenuPadrao" TargetType="Button">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="{StaticResource Quinta}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="btnCardGreen" TargetType="Button">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#e1f0eb" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="#0d3b1a" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="MinimumHeightRequest" Value="52" />
+            </Style>
+
+            <Style x:Key="btnCardRed" TargetType="Button">
+                <Setter Property="MinimumHeightRequest" Value="44" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#fae1d2" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="#EB5757" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="MinimumHeightRequest" Value="52" />
+            </Style>
+
+            <Style x:Key="btnCardYellow" TargetType="Button">
+                <Setter Property="MinimumHeightRequest" Value="44" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="BackgroundColor" Value="#fcf6d2" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="MinimumHeightRequest" Value="52" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderColor" Value="#FFBA00" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="btnCamera" TargetType="Button">
+                <Setter Property="TextColor" Value="Transparent" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="ImageSource" Value="camwhite.svg" />
+            </Style>
+
+            <Style x:Key="btnFoto" TargetType="Button">
+                <Setter Property="ZIndex" Value="1" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="CornerRadius" Value="31" />
+                <Setter Property="HeightRequest" Value="62" />
+                <Setter Property="WidthRequest" Value="62" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region 6- Entry-->
+            <Style x:Key="entryLogin" TargetType="Entry">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="MinimumHeightRequest" Value="52" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="entryItem" TargetType="Entry">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource White}" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region 7- Label-->
+            <Style x:Key="labelPadraoWhite" TargetType="Label">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style x:Key="labelCard" TargetType="Label">
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="TextColor" Value="{StaticResource Nona}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style x:Key="labelView" TargetType="Label">
+                <Setter Property="Margin" Value="0,10,0,0" />
+                <Setter Property="FontFamily" Value="PadraoRoboto" />
+                <Setter Property="FontAttributes" Value="None" />
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region 8- Shell-->
+            <Style x:Key="shellPadrao" TargetType="Shell">
+                <Setter Property="FlyoutBehavior" Value="Disabled" />
+                <Setter Property="FlyoutWidth" Value="80" />
+                <Setter Property="Shell.NavBarIsVisible" Value="False" />
+                <Setter Property="FlyoutVerticalScrollMode" Value="Auto" />
+            </Style>
+            <!--#endregion-->
+
+            <!--#region 9- Frame-->
+            <Style x:Key="frameFoto" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="72" />
+                <Setter Property="WidthRequest" Value="72" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+                <Setter Property="CornerRadius" Value="36" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="White" />
+            </Style>
+
+            <Style x:Key="frameLogin" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="52" />
+                <Setter Property="Padding" Value="5,0" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderColor" Value="{StaticResource Quinta}" />
+                <Setter Property="CascadeInputTransparent" Value="True" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style x:Key="frameCard" TargetType="Frame">
+                <Setter Property="MinimumHeightRequest" Value="132" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderColor" Value="{StaticResource Quarta}" />
+                <Setter Property="CascadeInputTransparent" Value="True" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Decima}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style x:Key="frameDatePicker" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="52" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="Margin" Value="0,0,0,10" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderColor" Value="{StaticResource Quarta}" />
+                <Setter Property="CascadeInputTransparent" Value="True" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Decima}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style x:Key="frameView" TargetType="Frame">
+                <Setter Property="IsClippedToBounds" Value="False" />
+                <Setter Property="Padding" Value="5,0" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderColor" Value="{StaticResource Quinta}" />
+                <Setter Property="CascadeInputTransparent" Value="True" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HasShadow" Value="False" />
+            </Style>
+
+            <Style x:Key="frameItem" TargetType="Frame">
+                <Setter Property="Padding" Value="5,0" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="MinimumHeightRequest" Value="60" />
+                <Setter Property="Margin" Value="5,2.5" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Terceira}" />
+                <Setter Property="BorderColor" Value="{StaticResource Segunda}" />
+                <Setter Property="CascadeInputTransparent" Value="True" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="HasShadow" Value="True" />
+            </Style>
+
+            <!--#endregion-->
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,1 @@
+D:\Projetos\AppNetMauiControleEstoque\AppNetMaui.csproj;x64

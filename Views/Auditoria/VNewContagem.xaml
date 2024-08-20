@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppNetMaui.Views.VNewContagem"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VNewContagem"
+    Loaded="ContentPage_Loaded">
+    <Grid>
+        <Image Aspect="AspectFill" Source="fundo.svg" />
+        <ActivityIndicator
+            x:Name="LoadingIndicator"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="False"
+            IsVisible="False"
+            VerticalOptions="CenterAndExpand"
+            Color="White" />
+
+        <!--  Conteúdo da tela de fundo  -->
+        <StackLayout x:Name="stackPrincipal" Padding="10">
+
+            <!--#region Linha 0 - Selecionar o local-->
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Grid.Column="0"
+                    HorizontalOptions="StartAndExpand"
+                    Style="{StaticResource labelView}"
+                    Text="Local:" />
+                <Label
+                    x:Name="lastId"
+                    Grid.Column="1"
+                    FlowDirection="RightToLeft"
+                    HorizontalOptions="EndAndExpand"
+                    Style="{StaticResource labelView}" />
+            </StackLayout>
+            <Frame Style="{StaticResource frameView}">
+                <Picker
+                    x:Name="_listaLocal"
+                    Title="Selecione o local..."
+                    ItemDisplayBinding="{Binding Local}"
+                    ItemsSource="{Binding lista}"
+                    Style="{StaticResource PickerPadrao}" />
+            </Frame>
+            <!--#endregion-->
+
+            <!--#region 1 - Seleciona/ Pesquisa itens-->
+
+            <Label Style="{StaticResource labelView}" Text="Item:" />
+
+            <Frame MinimumHeightRequest="52" Style="{StaticResource frameView}">
+                <StackLayout Orientation="Horizontal">
+                    <Image
+                        Margin="5,0,5,0"
+                        Aspect="AspectFill"
+                        HeightRequest="22"
+                        Source="procurar.svg" />
+                    <Entry
+                        x:Name="sbItens"
+                        Placeholder="Digite o nome do item..."
+                        Style="{StaticResource entryLogin}"
+                        TextChanged="sbItens_TextChanged" />
+                </StackLayout>
+            </Frame>
+            <!--#endregion-->
+
+            <!--#region 2- Itens-->
+
+            <Grid Grid.Row="0" RowDefinitions="*">
+
+                <!--#region 2.1 - Lista de itens-->
+                <ScrollView
+                    x:Name="frItens"
+                    Margin="0,-2,0,0"
+                    IsVisible="False"
+                    Orientation="Vertical"
+                    VerticalOptions="Start"
+                    VerticalScrollBarVisibility="Never"
+                    ZIndex="1">
+                    <Frame IsClippedToBounds="False" Style="{StaticResource frameView}">
+                        <ListView
+                            x:Name="_listaItem"
+                            HasUnevenRows="True"
+                            ItemSelected="_listaItem_ItemSelected"
+                            ItemsSource="{Binding lista_itens}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label
+                                            HeightRequest="52"
+                                            Style="{StaticResource labelCard}"
+                                            Text="{Binding Descricao}" />
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Frame>
+                </ScrollView>
+                <!--#endregion-->
+
+                <!--#region 2.2 Card itens selecionados-->
+                <StackLayout ZIndex="0">
+
+                    <Label
+                        Style="{StaticResource labelView}"
+                        Text="Itens para contagem:"
+                        ZIndex="0" />
+
+                    <Frame
+                        Padding="5"
+                        Style="{StaticResource frameView}"
+                        ZIndex="0">
+                        <ScrollView HorizontalScrollBarVisibility="Always">
+                            <CollectionView x:Name="_listaCard" VerticalScrollBarVisibility="Default">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <SwipeView>
+                                            <SwipeView.RightItems>
+                                                <SwipeItems>
+                                                    <SwipeItem
+                                                        BackgroundColor="#eb5757"
+                                                        Clicked="SwipeItem_Clicked"
+                                                        CommandParameter="{Binding .}"
+                                                        IconImageSource="/Imagens/delete.png" />
+
+                                                </SwipeItems>
+                                            </SwipeView.RightItems>
+                                            <Frame
+                                                BackgroundColor="#075069"
+                                                HeightRequest="105"
+                                                Style="{StaticResource frameItem}">
+                                                <StackLayout Orientation="Vertical">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Button
+                                                            x:Name="camera"
+                                                            Margin="5,5,0,0"
+                                                            Clicked="camera_Clicked"
+                                                            CornerRadius="6"
+                                                            HeightRequest="60"
+                                                            Style="{StaticResource btnCamera}"
+                                                            Text="{Binding IdItem}"
+                                                            VerticalOptions="StartAndExpand"
+                                                            WidthRequest="60" />
+                                                        <Label
+                                                            HorizontalOptions="Start"
+                                                            Style="{StaticResource labelPadraoWhite}"
+                                                            Text="SKU: "
+                                                            VerticalOptions="Center" />
+                                                        <Label
+                                                            HorizontalOptions="StartAndExpand"
+                                                            Style="{StaticResource labelPadraoWhite}"
+                                                            Text="{Binding Sku}"
+                                                            VerticalOptions="Center" />
+                                                        <Frame
+                                                            Padding="0"
+                                                            BackgroundColor="Transparent"
+                                                            BorderColor="Transparent"
+                                                            FlowDirection="RightToLeft"
+                                                            HorizontalOptions="Fill"
+                                                            MaximumHeightRequest="60"
+                                                            VerticalOptions="CenterAndExpand">
+                                                            <Frame.GestureRecognizers>
+                                                                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="OnFrameTapped" />
+                                                            </Frame.GestureRecognizers>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Label
+                                                                    Style="{StaticResource labelCard}"
+                                                                    Text="un"
+                                                                    TextColor="White"
+                                                                    VerticalOptions="CenterAndExpand" />
+                                                                <Label
+                                                                    Margin="-8,0,-8,0"
+                                                                    Style="{StaticResource labelCard}"
+                                                                    Text="{Binding QuantidadeUn}"
+                                                                    TextColor="White"
+                                                                    VerticalOptions="CenterAndExpand" />
+                                                                <Label
+                                                                    Style="{StaticResource labelCard}"
+                                                                    Text="{Binding estPrevUn}"
+                                                                    TextColor="White"
+                                                                    VerticalOptions="CenterAndExpand" />
+                                                                <Label
+                                                                    Margin="-8,0,0,0"
+                                                                    Style="{StaticResource labelCard}"
+                                                                    Text="{Binding QuantidadeCont}"
+                                                                    TextColor="White"
+                                                                    VerticalOptions="CenterAndExpand" />
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </StackLayout>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label
+                                                            FontSize="16"
+                                                            HorizontalOptions="FillAndExpand"
+                                                            Style="{StaticResource labelCard}"
+                                                            Text="{Binding Descricao}"
+                                                            TextColor="White"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </SwipeView>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                    </Frame>
+
+
+
+                </StackLayout>
+
+                <!--#endregion-->
+
+            </Grid>
+
+            <!--#endregion-->
+
+            <!--#endregion-->
+
+            <!--#region 2 - Botões-->
+            <StackLayout
+                Margin="0,15,0,0"
+                Orientation="Horizontal"
+                Spacing="10">
+                <Button
+                    x:Name="btnFinalizar"
+                    Grid.Column="1"
+                    Clicked="btnFinalizar_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource btnCardYellow}"
+                    Text="Finalizar" />
+            </StackLayout>
+            <!--#endregion-->
+
+        </StackLayout>
+
+        <!--  Popup de quantidade ocupando 25% da altura da tela  -->
+        <Frame
+            x:Name="pupQuantidade"
+            BackgroundColor="#c7c7c7"
+            CornerRadius="6"
+            HeightRequest="150"
+            HorizontalOptions="CenterAndExpand"
+            IsVisible="false"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="240">
+            <StackLayout Orientation="Vertical" Spacing="10">
+
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid x:Name="opUm">
+                        <Label
+                            x:Name="lblQtdun"
+                            Margin="0,0,2,0"
+                            HorizontalOptions="EndAndExpand"
+                            Style="{StaticResource labelCard}"
+                            Text="un"
+                            TextColor="Black"
+                            VerticalOptions="End" />
+                        <Entry
+                            x:Name="quantidadeEntry"
+                            Margin="0,0,0,-2"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            TextColor="Black"
+                            VerticalTextAlignment="End"
+                            WidthRequest="100" />
+                    </Grid>
+
+                    <Grid x:Name="opDois">
+                        <Label
+                            x:Name="lblMedidaPup"
+                            Margin="0,0,2,0"
+                            HorizontalOptions="EndAndExpand"
+                            Style="{StaticResource labelCard}"
+                            TextColor="Black"
+                            VerticalOptions="End" />
+                        <Entry
+                            x:Name="quantidadeEntryMed"
+                            Margin="0,0,0,-2"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            TextColor="Black"
+                            VerticalTextAlignment="End"
+                            WidthRequest="100" />
+                    </Grid>
+                </Grid>
+                <Button
+                    Clicked="OKButton_Clicked"
+                    Text="OK"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

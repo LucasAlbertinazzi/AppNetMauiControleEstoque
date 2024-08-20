@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppNetMaui.Views.Principal.VVisualizadorImagem"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VVisualizadorImagem">
+    <CarouselView x:Name="carrocel" Loop="False">
+        <CarouselView.ItemTemplate>
+            <DataTemplate>
+                <Grid Grid.Row="0" RowDefinitions="*">
+                    <Image Aspect="AspectFit" Source="{Binding}" />
+                    <Button
+                        Margin="80,40"
+                        BackgroundColor="Transparent"
+                        Clicked="OnDeleteClicked"
+                        FontSize="Large"
+                        HorizontalOptions="End"
+                        IsVisible="false"
+                        Text="X"
+                        TextColor="White"
+                        VerticalOptions="Start"
+                        ZIndex="1" />
+                </Grid>
+            </DataTemplate>
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+</ContentPage>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppNetMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppNetMaui.Views"
+    FlyoutBackgroundColor="{StaticResource Nona}"
+    Loaded="Shell_Loaded"
+    Style="{StaticResource shellPadrao}">
+
+    <Shell.FlyoutHeader>
+        <StackLayout
+            Padding="5"
+            Orientation="Vertical"
+            Spacing="10">
+            <Button
+                Margin="0,10,0,0"
+                BackgroundColor="Transparent"
+                Clicked="OnHomeClicked"
+                HorizontalOptions="Center"
+                ImageSource="home.svg"
+                VerticalOptions="Center" />
+            <Button
+                x:Name="btnSettings"
+                BackgroundColor="Transparent"
+                Clicked="OnSettingsCliked"
+                HorizontalOptions="Center"
+                ImageSource="settings.svg"
+                VerticalOptions="Center" />
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="OnLogoutClicked"
+                HorizontalOptions="Center"
+                ImageSource="logout.svg"
+                VerticalOptions="Center" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:VLogin}" Route="VLogin" />
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutItemIsVisible="False">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:VMenuPrincipal}"
+            Route="VMenuPrincipal" />
+    </FlyoutItem>
+
+</Shell>

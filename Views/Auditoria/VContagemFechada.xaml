@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppNetMaui.Views.VContagemFechada"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VContagemFechada"
+    Loaded="ContentPage_Loaded">
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            HorizontalOptions="Fill"
+            Source="fundo.svg"
+            VerticalOptions="Fill" />
+        <ScrollView VerticalScrollBarVisibility="Always">
+            <Grid>
+                <ActivityIndicator
+                    x:Name="LoadingIndicator"
+                    HorizontalOptions="Center"
+                    IsRunning="False"
+                    IsVisible="False"
+                    VerticalOptions="Center"
+                    Color="White" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="92" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="15,0" Orientation="Vertical">
+                        <Label Style="{StaticResource labelView}" Text="Período:" />
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Frame Style="{StaticResource frameDatePicker}">
+                                <DatePicker x:Name="dpInicial" BackgroundColor="Transparent" />
+                            </Frame>
+                            <Frame Style="{StaticResource frameDatePicker}">
+                                <DatePicker
+                                    x:Name="dpFinal"
+                                    BackgroundColor="Transparent"
+                                    DateSelected="dpFinal_DateSelected" />
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <Frame
+                        x:Name="avisoNoList"
+                        Grid.Row="1"
+                        Margin="5"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        IsVisible="False"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            FontSize="22"
+                            HorizontalOptions="CenterAndExpand"
+                            Style="{StaticResource labelPadraoWhite}"
+                            Text="Não existem contagens fechadas!"
+                            VerticalOptions="CenterAndExpand" />
+                    </Frame>
+                    <CollectionView
+                        x:Name="cvFechadas"
+                        Grid.Row="1"
+                        Margin="15"
+                        ItemsSource="{Binding card_fechadas}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame Style="{StaticResource frameCard}">
+                                    <VerticalStackLayout Padding="10">
+                                        <Label Style="{StaticResource labelCard}" Text="{Binding IdLista}" />
+                                        <Label Style="{StaticResource labelCard}" Text="{Binding DataAbre}" />
+                                        <Label Style="{StaticResource labelCard}" Text="{Binding Local}" />
+                                        <StackLayout
+                                            Margin="0,10,0,0"
+                                            Orientation="Horizontal"
+                                            Spacing="10">
+                                            <Button
+                                                x:Name="btnVisualizar"
+                                                Clicked="btnVisualizar_Clicked"
+                                                CommandParameter="{Binding IdLista}"
+                                                HorizontalOptions="FillAndExpand"
+                                                Style="{StaticResource btnCardYellow}"
+                                                Text="Visualizar" />
+                                        </StackLayout>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>
